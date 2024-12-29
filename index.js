@@ -5,16 +5,18 @@ document.querySelector('.contact-button-container .btn').addEventListener('click
     console.log('Formulário de contato aberto');
   });
 
-const button = document.querySelector('form button')
-const modal = document.querySelector("dialog")
-const buttonClose = document.querySelector("dialogbutton")
-
-button.onclick = function () {
-  Modal.showModal()
-
-}
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    const dialog = document.getElementById("thank-you-dialog");
+    const closeBtn = document.getElementById("close-dialog-btn");
   
-
-buttonClose.onclick = function () {
-  modal.close()
-}
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Impede o envio do formulário para testar localmente
+      dialog.showModal(); // Exibe o popup
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      dialog.close(); // Fecha o popup
+    });
+  });
+  
