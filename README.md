@@ -1,6 +1,6 @@
 # SITE KCARRASCO 🏹
 
-<img src="home" width="100%">
+<img src='./images/home1edit.png' width="100%">
 
 Este projeto tem como objetivo apresentar um site de portfólio profissional e pessoal, destacando as principais experiências, habilidades e iniciativas do autor. A construção do site buscou aprimorar os seguintes conceitos:
 
