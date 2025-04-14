@@ -35,7 +35,7 @@ main {
 }
 
 .btn {
-  background: #a51c2c;
+  background: #5e17eb;
   color: #fff;
   padding: 1.2rem 3.2rem;
   font-size: 0.8rem;
@@ -148,7 +148,7 @@ nav > ul a {
   text-decoration: none;
 }
 nav > ul :hover {
-  color: #a51c2c;
+  color: #5e17eb;
 }
 
 .header-profile-container {
@@ -219,7 +219,7 @@ nav > ul :hover {
 }
 
 .btn:hover {
-  background-color: #a51c2c;
+  background-color: #5e17eb;
   color: #fff;
 }
 
