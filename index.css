@@ -237,6 +237,35 @@ nav > ul :hover {
   display: flex;
 }
 
+#google_translate_element {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background: white;
+  border-radius: 30px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.goog-logo-link, .goog-te-gadget span {
+  display: none !important;
+}
+
+#google_translate_element select {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none;
+}
+
+
 .section-about-me, .section-about-me-content> h2, h3
 .section-about-me, .section-about-me-content .subtitle {
   color: #fff;
