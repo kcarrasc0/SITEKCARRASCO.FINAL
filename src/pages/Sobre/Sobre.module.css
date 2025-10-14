@@ -1,0 +1,299 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroSection {
+  display: flex;
+  /* Removido justify-content: space-between; pois não precisamos do espaço extra */
+  align-items: center;
+  gap: 3rem; /* Espaçamento entre texto e imagem */
+  min-height: 100vh;
+  /* Ajustamos o padding para controlar o espaço do texto, mas deixamos a imagem ir até a borda */
+  padding-left: 10%; 
+  padding-right: 0; /* IMPORTE: Remove o padding da direita da seção principal */
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFEITO DE LUZ LATERAL ESQUERDA */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 600px;
+  height: 600px;
+  background: rgba(138, 43, 226, 0.15);
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.textContainer {
+  /* Ocupa uma porcentagem do espaço disponível, permitindo que a imagem ocupe o resto */
+  flex: 0 0 50%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 50% */
+  max-width: 50%; /* Garante que o texto não ultrapasse 50% da largura */
+  z-index: 1;
+}
+
+
+.textContainer h2 {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.textContainer p {
+  color: var(--text-secondary-color);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.fraseImpacto {
+  font-weight: bold;
+  color: var(--text-color) !important; /* !important para garantir a sobreposição */
+}
+
+.imageContainer {
+  /* Faz o container da imagem ocupar todo o espaço restante e ir até a borda */
+  flex: 1; /* Permite que este item cresça e ocupe o espaço restante */
+  height: 100vh; /* Faz o container da imagem ter a altura da tela */
+  /* Removido o width: 50% pois o flex: 1 já cuida disso e permite que ele se ajuste */
+}
+
+.imageContainer img {
+  width: 100%; /* A imagem preenche 100% do seu container */
+  height: 100%;
+  object-fit: cover;
+  /* EFEITO DE DEGRADÊ NA IMAGEM */
+  mask-image: linear-gradient(to right, transparent 0%, black 25%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
+}
+
+/* Seção 2 - Próposito*/
+
+.skillsSection {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 150px 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz sutil atrás da coluna da esquerda */
+.skillsSection::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(138, 43, 226, 0) 60%);
+  bottom: 0;
+  left: 0;
+  transform: translate(-40%, 40%);
+}
+
+/* Coluna da Esquerda (Causa) */
+.causaContainer {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.causaContainer h3 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.causaContainer h2 {
+  font-size: 2.8rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.causaContainer p {
+  color: var(--text-secondary-color);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.causaContainer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.causaContainer li {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+/* Adiciona um marcador roxo customizado na lista */
+.causaContainer li::before {
+  content: '▶';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+/* Coluna da Direita (Skills) */
+.skillsContainer {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.hardSkills h4, .softSkills h4 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.iconGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.iconGrid img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.iconGrid img:hover {
+  transform: scale(1.1);
+}
+
+.tagGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tagGrid span {
+  background-color: #2a2a35; /* Cor de fundo das tags */
+  color: var(--text-secondary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tagGrid span:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+/* ================================================ */
+/* ===== PONTO DE QUEBRA: TABLETS (1024px) ===== */
+/* ================================================ */
+@media (max-width: 1024px) {
+  /* Reduz o padding lateral para tablets */
+  .heroSection {
+    padding-left: 5%;
+    gap: 2rem;
+  }
+
+  .skillsSection {
+    padding: 100px 5%;
+    gap: 3rem;
+  }
+
+  /* Reduz um pouco os títulos */
+  .textContainer h2,
+  .causaContainer h2 {
+    font-size: 2.2rem;
+  }
+
+  .hardSkills h4, .softSkills h4, .causaContainer h3 {
+    font-size: 1.5rem;
+  }
+
+  .iconGrid img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+
+/* ================================================ */
+/* ===== PONTO DE QUEBRA: CELULARES (768px) ===== */
+/* ================================================ */
+@media (max-width: 768px) {
+  /* --- Seção 1: Capa da Página --- */
+  .heroSection {
+    flex-direction: column; /* Empilha texto e imagem */
+    min-height: auto; /* Altura automática */
+    padding: 120px 5% 60px 5%; /* Ajusta padding para mobile (topo, lados, fundo) */
+  }
+
+  .textContainer {
+    flex-basis: auto; /* Remove a base de 50% */
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .textContainer p {
+    text-align: left; /* Mantém parágrafos alinhados à esquerda para melhor leitura */
+  }
+
+  .imageContainer {
+    flex: auto; /* Remove a regra de crescimento */
+    width: 100%;
+    height: 350px; /* Altura fixa para a imagem no mobile */
+    margin-top: 40px; /* Espaço entre o texto e a imagem */
+    order: -1; /* Coloca a imagem ANTES do texto */
+  }
+
+  .imageContainer img {
+    /* O degradê agora precisa ir de baixo para cima */
+    mask-image: linear-gradient(to top, transparent 0%, black 25%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%);
+  }
+
+  /* --- Seção 2: Causa e Skills --- */
+  .skillsSection {
+    flex-direction: column; /* Empilha as duas colunas */
+    padding: 60px 5%;
+    gap: 50px; /* Espaço entre a seção de Causa e a de Skills */
+  }
+
+  .causaContainer,
+  .skillsContainer {
+    max-width: 100%;
+  }
+
+  .iconGrid {
+    justify-content: center; /* Centraliza os ícones */
+  }
+
+  .tagGrid {
+    justify-content: center; /* Centraliza as tags */
+  }
+}

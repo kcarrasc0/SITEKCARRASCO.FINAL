@@ -1,0 +1,680 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.section {
+  padding: 100px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Seção 1: Home-Capa */
+.homeCapa {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.3), transparent 50%),
+              radial-gradient(circle at center, rgba(75, 0, 130, 0.2), transparent 60%);
+  background-color: var(--background-color);
+}
+
+.homeCapa .textContainer {
+  max-width: 50%;
+}
+
+
+.homeCapa h1 {
+  font-size: 4rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.homeCapa h2 {
+  font-size: 2.3rem;
+  color: var(--primary-color);
+  margin: 10px 0 30px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ctaButton {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50px; /* Bordas arredondadas */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.secondaryButton {
+  padding: 15px 30px;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color); /* Borda branca */
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.homeCapa .imageContainer img {
+  max-width: 500px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px var(--primary-color);
+}
+
+/*SEÇÃO 2 - Sobre mim*/
+.sobreMim {
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column; 
+}
+
+/* EFEITOS DE LUZ NO FUNDO (Mantém suas alterações) */
+.sobreMim::before,
+.sobreMim::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+.sobreMim::before {
+  width: 900px;
+  height: 600px;
+  background: rgba(138, 43, 226, 0.15);
+  top: 5%;
+  left: -150px;
+}
+.sobreMim::after {
+  width: 350px;
+  height: 550px;
+  background: rgba(130, 0, 113, 0.12);
+  top: 10%;
+  left: 10%;
+}
+
+/* NOVO: Estilo para o cabeçalho da seção */
+.sectionHeader {
+  text-align: center; /* Centraliza todo o texto dentro dele */
+  width: 100%;
+  margin-bottom: 60px; /* Espaço entre os títulos e o conteúdo abaixo */
+  position: relative; /* Garante que fique acima das luzes */
+  z-index: 1;
+}
+
+/* NOVO: Estilo para o container do conteúdo principal (2 colunas) */
+.sectionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ESTILOS DO CONTEÚDO (Mantém suas alterações) */
+.textContainerSobre,
+.imageContainerSobre {
+  position: relative;
+  z-index: 1;
+}
+
+.textContainerSobre {
+  max-width: 55%;
+  flex-direction: column;
+}
+
+.sectionHeader h2 {
+  color: var(--primary-color);
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sectionHeader h3 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.subtituloSobre {
+  color: var(--text-secondary-color);
+  font-size: 1.1rem;
+  margin-top: 15px;
+  max-width: 600px; /* Limita a largura para melhor leitura */
+  margin-left: auto; /* Centraliza o parágrafo se ele for menor que o container */
+  margin-right: auto;
+}
+
+.textContainerSobre h4 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.textContainerSobre p {
+  color: var(--text-secondary-color);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.textContainerSobre strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.imageContainerSobre img {
+  max-width: 900px;
+}
+
+/* BOTÃO "VER MAIS" (Mantém suas alterações) */
+.outlineButton {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.outlineButton:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-3px);
+}
+
+/* Seção 3 - Destaques e Projetos*/
+
+.projetosSection {
+  background-color: var(--background-color);
+  flex-direction: column; /* Organiza a seção verticalmente */
+}
+
+/* Tag "Tecnologia com Propósito" */
+.sectionTag {
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+/* Grid que segura os cards */
+.projetosGrid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Garante que os cards tenham a mesma altura */
+  gap: 2.5rem;
+  width: 100%;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+}
+
+/* Estilo individual de cada card de projeto */
+.projetoCard {
+  background-color: #121217; /* Um pouco mais claro que o fundo preto */
+  border-radius: 16px;
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.2); /* Sutil brilho roxo */
+}
+
+.projetoCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(138, 43, 226, 0.4); /* Brilho mais intenso no hover */
+}
+
+.projetoCard img {
+  width: 100%;
+  height: 220px; /* Altura fixa para todas as imagens */
+  object-fit: cover; /* Evita que a imagem seja distorcida */
+}
+
+/* Conteúdo de texto do card */
+.cardContent {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz este container ocupar o espaço restante */
+}
+
+.cardContent h4 {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.cardContent p {
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Empurra o botão para o final do card */
+}
+
+/*Seção 4 - Impacto e Causa*/
+
+.impactoSection {
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 0px;
+  flex-direction: column; 
+}
+
+/* EFEITO DE LUZ */
+.impactoSection::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 900px;
+  height: 800px;
+  background: rgba(138, 43, 226, 0.15);
+  bottom: -200px;
+  left: -200px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+
+.textContainerImpacto,
+.imageContainerImpacto {
+  position: relative;
+  z-index: 1;
+}
+
+.textContainerImpacto {
+  max-width: 50%; /* Ajustado para o layout de duas colunas */
+  /* A propriedade flex-direction: column foi removida daqui pois não é necessária */
+}
+
+.textContainerImpacto h4 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.textContainerImpacto p {
+  color: var(--text-secondary-color);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin-bottom: 20px;
+}
+
+.fraseImpacto {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-top: 30px;
+}
+
+.imageContainerImpacto {
+  max-width: 45%; /* Ajustado para o layout de duas colunas */
+}
+
+.imageContainerImpacto img {
+  max-width: 200%; /* Faz a imagem ser responsiva dentro do container */
+  height: auto;
+}
+
+/*Seção 5 - Depoimentos*/
+
+.depoimentosSection {
+  background-color: var(--background-color);
+  flex-direction: column; /* Organiza a seção verticalmente */
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* EFEITOS DE LUZ NO FUNDO */
+.depoimentosSection::before,
+.depoimentosSection::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(150px);
+}
+
+/* Luz 1: Canto superior esquerdo */
+.depoimentosSection::before {
+  width: 700px;
+  height: 500px;
+  background: rgba(138, 43, 226, 0.1);
+  top: -150px;
+  left: 100px;
+  background: rgba(138, 43, 226, 0.15);
+  bottom: -200px;
+  left: -200px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+/* Luz 2: Inferior centralizada */
+.depoimentosSection::after {
+  width: 700px;   
+  height: 700px;     
+  background: rgba(75, 0, 130, 0.12); 
+  bottom: -270px;   
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Grid que segura os cards de depoimentos */
+.depoimentosGrid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative; /* Garante que os cards fiquem sobre as luzes */
+  z-index: 1;
+}
+
+/* Estilo individual de cada card de depoimento */
+.depoimentoCard {
+  background-color: #121217;
+  border: 1px solid var(--primary-color);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 350px;
+  padding: 40px 30px 30px 30px;
+  position: relative; /* Necessário para posicionar o avatar */
+  margin-top: 50px; /* Espaço para a imagem "vazar" para cima */
+}
+
+/* Avatar (imagem de perfil) */
+.depoimentoAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -50px; /* Metade da altura da imagem, para "vazar" para fora */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza a imagem horizontalmente */
+}
+
+/* Conteúdo de texto do depoimento */
+.depoimentoContent {
+  text-align: center;
+  padding-top: 50px; /* Espaço para compensar a imagem */
+}
+
+.depoimentoContent h4 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.depoimentoContent h5 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 400; /* Mais fino que o nome */
+}
+
+.depoimentoContent p {
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+}
+
+/*Seção 6 - Contato*/
+
+.contatoSection {
+  background-color: var(--background-color);
+  flex-direction: column; /* Organiza a seção verticalmente */
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+
+/* Container para os links de contato */
+.contactLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Formulário de Contato com efeito de vidro fosco */
+.contactForm {
+  background: rgba(20, 20, 26, 0.5); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px); /* O efeito de desfoque */
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(138, 43, 226, 0.2); /* Borda sutil */
+}
+
+/* Grupo de Label + Input */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactForm label {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 19px;
+  padding: 18px;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit; /* Usa a mesma fonte do site */
+  transition: box-shadow 0.3s ease;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5); /* Brilho roxo ao focar */
+}
+
+.contactForm textarea {
+  resize: vertical; /* Permite redimensionar apenas na vertical */
+  min-height: 150px;
+}
+
+/* Botão de Enviar */
+.contactForm .ctaButton {
+  align-self: center; /* Centraliza o botão dentro do form */
+  width: 50%; /* Define uma largura para o botão */
+  max-width: 250px;
+  margin-top: 10px;
+}
+
+.statusMessage {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 5%; /* Reduz o padding lateral e vertical */
+    gap: 1.5rem;
+  }
+
+  .homeCapa h1 {
+    font-size: 3rem;
+  }
+
+  .homeCapa h2 {
+    font-size: 1.8rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2.2rem;
+  }
+
+  .sectionHeader h3 {
+    font-size: 1.8rem;
+  }
+
+  .depoimentosGrid {
+    gap: 1.5rem;
+  }
+}
+
+/* ================================================ */
+/* ===== PONTO DE QUEBRA: CELULARES (768px) ===== */
+/* ================================================ */
+@media (max-width: 768px) {
+  /* Regra geral para seções de 2 colunas */
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* --- Seção 1: Home-Capa --- */
+  .homeCapa {
+    flex-direction: column-reverse; /* Imagem em cima, texto embaixo */
+    text-align: center;
+    padding-top: 120px; /* Mais espaço para o header */
+  }
+
+  .homeCapa .textContainer,
+  .homeCapa .imageContainer {
+    max-width: 100%;
+  }
+
+  .homeCapa .imageContainer {
+    margin-bottom: 40px;
+  }
+  
+  .homeCapa .imageContainer img {
+    max-width: 280px; /* Reduz a imagem no mobile */
+  }
+  
+  .buttonGroup {
+    justify-content: center; /* Centraliza os botões */
+    flex-direction: column;
+  }
+  
+  .translateButton {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o botão */
+  }
+
+  /* --- Seção 2: Sobre Mim --- */
+  .sobreMim {
+    flex-direction: column;
+  }
+
+  .sectionContent {
+    flex-direction: column;
+  }
+
+  .textContainerSobre,
+  .imageContainerSobre {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .imageContainerSobre {
+    margin-bottom: 30px;
+  }
+
+  .imageContainerSobre img {
+    max-width: 100%;
+  }
+
+  .textContainerSobre p {
+    text-align: left; /* Mantém o parágrafo alinhado à esquerda para leitura */
+  }
+  
+  /* --- Seção 4: Impacto e Causa --- */
+  .impactoSection {
+    padding-bottom: 60px;
+  }
+
+  .impactoSection .sectionContent {
+    flex-direction: column-reverse; /* Inverte a ordem: texto em cima, imagem embaixo */
+  }
+  
+  .textContainerImpacto,
+  .imageContainerImpacto {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .imageContainerImpacto {
+    margin-bottom: 30px;
+  }
+
+  /* --- Seção 5: Depoimentos --- */
+  .depoimentoCard {
+    max-width: 100%;
+  }
+
+  /* --- Seção 6: Contato --- */
+  .contatoSection {
+    padding-bottom: 100px;
+  }
+
+  .contactForm {
+    padding: 25px;
+  }
+
+  .contactForm .ctaButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: transparent;
+  position: absolute;
+  width: 90%; /* (100% - 10% de padding total) */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 35px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Espaçamento entre os links */
+}
+
+.nav a { /* Estilo aplicado tanto a <a> quanto a <Link> */
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Oculta o ícone de hambúrguer em telas grandes */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--text-color);
+}
+
+
+/* ================================================ */
+/* ===== RESPONSIVIDADE (TABLETS E CELULARES) ===== */
+/* ================================================ */
+@media (max-width: 768px) {
+  /* Mostra o ícone de hambúrguer */
+  .hamburger {
+    display: block;
+    z-index: 1002; /* Garante que fique acima do menu */
+  }
+
+  /* Esconde o menu de navegação normal */
+  .nav {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    right: -100%; /* Começa fora da tela, à direita */
+    width: 70%; /* Ocupa 70% da largura da tela */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    background-color: rgba(16, 15, 20, 0.95); /* Fundo escuro com transparência */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Organiza os links verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    
+    transition: right 0.4s ease-in-out;
+    z-index: 1001;
+  }
+  
+  /* Estilo que é ativado via JavaScript para mostrar o menu */
+  .nav.active {
+    right: 0; /* Puxa o menu para dentro da tela */
+  }
+
+  .nav a {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte no menu mobile */
+  }
+}
