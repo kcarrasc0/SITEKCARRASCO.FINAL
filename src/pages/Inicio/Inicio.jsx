@@ -222,7 +222,7 @@ const Inicio = () => {
             <div className={styles.depoimentoContent}>
               <h4>Ruan Guedes</h4>
               <h5>COO - Desenvolvedor</h5>
-              <p>"A NOOK é uma startup de soluções tecnológicas focada em ajudar a tribo minoritária da população com tecnologia."</p>
+              <p>"Trabalhar com o Carrasco é incrível. A honestidade e a pró-atividade dele sempre me chamaram atenção desde o início. Hoje, não o vejo apenas como um sócio, mas como um irmão pra vida."</p>
             </div>
           </div>
 
