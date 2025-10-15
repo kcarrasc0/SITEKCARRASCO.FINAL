@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './servicos.module.css'; // Usaremos o novo arquivo de CSS
+import styles from './Servicos.module.css'; // Usaremos o novo arquivo de CSS
 
 // Seção 1 - Capa
 import fotoServicos from '../../assets/images/kcarrasco/foto-servicos.png'; 

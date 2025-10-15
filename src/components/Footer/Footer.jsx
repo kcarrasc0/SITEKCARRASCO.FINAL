@@ -1,7 +1,7 @@
 // src/components/Footer/Footer.jsx
 
 import React from 'react';
-import styles from './footer.module.css';
+import styles from './Footer.module.css';
 
 // Importe sua logo e os ícones
 import logoKcarrasco from '../../assets/images/logos/logokcarrasco.png'; 

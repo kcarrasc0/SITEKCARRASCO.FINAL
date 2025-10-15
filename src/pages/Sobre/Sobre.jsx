@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './sobre.module.css'; // Usando o novo arquivo de CSS
+import styles from './Sobre.module.css'; // Usando o novo arquivo de CSS
 
 // Seção 1 - Capa
 import fotoSobre from '../../assets/images/kcarrasco/foto-sobre.jpg'; 
